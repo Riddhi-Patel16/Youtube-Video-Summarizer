@@ -1,0 +1,218 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+i{
+  font-size: 1.5rem;
+}
+/* navbar styling */
+li{
+  list-style: none;
+}
+.links li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color:rgb(0,0,0);
+  font-size: 1rem;
+}
+a:hover,.active{
+  color: rgb(0, 128, 255);
+}
+header{
+  position:relative;
+  padding: 0 2rem;
+  background: rgba(255, 255, 255);
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+.navbar{
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+.navbar .logo img{
+  height:50px ;
+}
+.navbar .links{
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .toggle-btn{
+  color: black;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+.loginsignup{
+  display: flex;
+  gap: 20px;
+}
+#home2{
+  width: 100px;
+}
+ .action-btn{
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: scale 0.2 ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.action-btn:hover{
+  scale: 1.05;
+  /* color: rgba(0, 183, 255, 0.756); */
+}
+.action-btn:active{
+  scale: 0.95;
+}
+.dropdown-menu{
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  height: 0;
+  width: 250px;
+  background: rgba(255, 255, 255, 0.121);
+  backdrop-filter: blur(55px);
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 100;
+  transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding-top: 10px;
+}
+.dropdown-menup{
+  display: none;
+  position: absolute;
+  right: 4rem;
+  top: 60px;
+  height: 0;
+  width: 250px;
+  background: rgba(255, 255, 255, 0.121);
+  backdrop-filter: blur(55px);
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 100;
+  transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding-top: 10px;
+}
+.open{
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.openp{
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+}
+.dropdown-menu li{
+  /* padding: 0.7rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dropdown-menu .action-btn{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+.dropdown-menup li{
+  /* padding: 0.7rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dropdown-menup .action-btn{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+/* home page content styling */
+section#hero{
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  text-align: center;
+  color:#040404;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  background: none;
+}
+
+.content h1{
+  font-size: 2.5rem;
+  font-weight: bolder;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 2rem;
+  letter-spacing:1px;
+  /* text-transform: uppercase; */
+}
+.demo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* responsive website for navbar */
+@media(max-width:940px)
+{
+  .navbar .links,.navbar .action-btn{
+    display: none;
+  }
+  .navbar .toggle-btn{
+    display: block;
+  }
+  .content h1{
+    font-size: 2rem;
+  }
+  .openp{
+    height: 0px;
+    padding-top: 0px;
+  }
+}
+@media(min-width:941px)
+{
+  .open{
+    height: 0px;
+    padding-top: 0px;
+  }
+}
+@media(max-width:576px)
+{
+  .dropdown-menu,.dropdown-menup{
+    left: 2rem;
+    width: unset;
+  }
+}

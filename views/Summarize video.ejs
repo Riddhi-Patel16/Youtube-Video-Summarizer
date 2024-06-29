@@ -1,0 +1,32 @@
+<%- include("partials/header.ejs") %>
+
+    <!-- Summarize video content -->
+    <%if(!(locals.summary)){%>
+    <section class="before">
+      <form action="/api/youtube" class="gap">
+      <h1 class="heading" id="head1">Transcript your video now</h1>
+      <div class="link"> 
+      <p id="up">Link:</p><input type="url" name="weburl" id="weburl" placeholder="Enter URL:https://www.youtube.com/watch?v=8sxAcYnZRMR">
+      </div>
+      <button class="summary2" onclick="changeslide()" >Transcript Now</button>
+      </form>
+    </section><%}%>
+    <!-- after -->
+    <% if(locals.summary){%>
+    <section class="summarize" style="display: flex;"><%}else{%>
+    <section class="summarize" style="display: none;"><%}%>
+    <h1 class="heading">Your Summarized Transcript</h1>
+      <textarea name="summarytext"  id="sum34" cols="50" rows="10"><%summary2=(locals.summary)?summary:"Summarizing Video....."%><%=summary2%></textarea>
+      <div class="btns">
+      <button class="summary" id="btn1" onclick="speak()">
+        <i class='bx bx-volume-full'></i>
+        Speak</button>
+      <button class="summary" id="btn2" onclick="translate2()">
+      <image src="/images/translate.png" height="15px" width="15px"></image>Translate
+      <select id="api">
+        <option value="hi-IN" selected>Hindi</option>
+      </select>
+      </button>
+    </div>
+    </section>
+    <%- include("partials/footer.ejs") %>

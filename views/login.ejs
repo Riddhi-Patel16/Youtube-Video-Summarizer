@@ -1,0 +1,41 @@
+<%- include("partials/header.ejs") %>
+
+   <div class="wrapper">
+    <div class="form-box">
+        
+        <!------------------- login form -------------------------->
+        <div class="dbsuccess"><% let mess2=(locals.mess)?mess+"*":"" %><%=mess2%></div>
+        <div class="dberror"><% let error2=(locals.error)?error+"*":"" %><%=error2%></div>
+        <form action="http://localhost:3000/login" onsubmit="return validform1()" method="post" name="form1">
+        <div class="login-container" id="login">
+            <div class="top">
+                <span>Don't have an account? <a href="/registerpage" onclick="register()">Sign Up</a></span>
+                <h3>Login</h3>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" name="uname_email" placeholder="Username or Email *" id="email-field" onkeyup="emailvalidate()" >
+                <i class="bx bx-user"></i>
+                <span id="email-error"></span>
+            </div>
+            <div class="input-box">
+                <input type="password" class="input-field" name="pass"  placeholder="Password *" id="password" onkeyup="passwordvalid()">
+                <i class="bx bx-lock-alt"></i>
+                <span id="pass-error"></span>
+            </div>
+            <div class="input-box">
+                <input type="submit" class="submit" value="Sign In">
+            </div>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="login-check">
+                    <label for="login-check"> Remember Me</label>
+                </div>
+                <div class="two">
+                    <label><a href="#">Forgot password?</a></label>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+</div>
+<%- include("partials/footer.ejs") %>

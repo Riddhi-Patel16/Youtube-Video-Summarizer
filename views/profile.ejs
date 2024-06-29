@@ -1,0 +1,37 @@
+<%- include("partials/header.ejs") %>
+
+   <div class="wrapper">
+    <div class="form-box">
+        
+        <!------------------- registration form -------------------------->
+        <div class="dberror"><% let error2=(locals.error)?error+"*":"" %><%=error2%></div>
+        <form action="/update" onsubmit="return signupvalid()" method="POST" name="form2">
+        <div class="register-container" id="register">
+            <div class="top">
+                <h3>Update Profile</h3>
+            </div>
+            <div class="two-forms">
+                <div class="input-box">
+                    <input type="text" class="input-field" name="fname" placeholder="Firstname *" id="firstname"  value="<% let fname2=(locals.fname)?fname:"" %><%=fname2%>" onkeyup="firstvalid()">
+                    <i class="bx bx-user"></i>
+                    <span class="error"></span>
+                </div>
+                <div class="input-box"> 
+                    <input type="text" class="input-field" name="lname" placeholder="Lastname *" id="lastname"  value="<% let lname2=(locals.lname)?lname:"" %><%=lname2%>" onkeyup="lastvalid()" >
+                    <i class="bx bx-user"></i>
+                    <span class="error"></span>
+                </div>
+            </div>
+            <div class="input-box">
+                <input type="password" class="input-field" name="pass" placeholder="Password *" id="pass-signup"  value="<% let pass2=(locals.pass)?pass:"" %><%=pass2%>"        onkeyup="passwordvalidsignup2()">
+                <i class="bx bx-lock-alt"></i>
+                <span class="error"></span>
+            </div>
+            <div class="input-box">
+                <input type="submit" class="submit" value="Update">
+            </div>
+        </div>
+    </form>
+    </div>
+</div>
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- boxicon font link -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+         <!-- css file -->
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/style2.css"/>
+    <link rel="stylesheet" href="/style4.css"/>
+    <title>Youtube Video Summarizer</title>
+  </head>
+  <body>
+    <!-- logo---navbar--login/signup  button--- -->
+    <header>
+      <div class="navbar">
+        <div class="logo">
+          <!-- logo -->
+       <a href="/"><p>Youtube video Summarizer</p></a>   
+        </div>
+        
+        <!-- navbar -->
+          <ul class="links">
+            <li><a href="/" class="home">Home</a></li>
+            <li><a href="/about" class="about">About Us</a></li>
+            <li><a href="/team" class="team">Team</a></li>
+            <li><a href="/Summarize-video" class="search">Summarize video</a></li>
+          </ul>
+          <!-- signup.login button -->
+          <% if(locals.login){%>
+            <li><a href="#" class="action-btn" id="profile" ><%=login%></a></li>
+            <div class="dropdown-menup">
+              <li><a href="/profile:<%= login %>" class="profile">Edit Profile</a></li>
+              <li><a href="/logout" class="action-btn">Logout</a></li>
+            </div>
+         <% }else{%>
+             <div class="loginsignup">
+               <li><a href="/loginpage" class="action-btn" id="home2">Login</a></li>
+               <li><a href="/registerpage" class="action-btn" id="home2">SignUp</a></li>
+              </div>
+         <% }%>
+          <!-- mobile view navbar buuton -->
+          <div class="toggle-btn">
+            <i class="bx bx-menu"></i>
+          </div>
+      </div>
+      <!-- for mobile view navbar -->
+      <div class="dropdown-menu ">
+        <li><a href="/" class="home">Home</a></li>
+        <li><a href="/about" class="about">About Us</a></li>
+        <li><a href="/team" class="team">Team</a></li>
+        <li><a href="/Summarize-video" class="search">Summarize video</a></li>
+       <% if(locals.login){%>
+            <li><a href="/profile:<%= login %>" class="home">Edit Profile</a></li>
+            <li><a href="/logout" class="action-btn">Logout</a></li>
+       <% }else{%>
+             <li><a href="/loginpage" class="action-btn" >Login</a></li>
+             <li><a href="/registerpage" class="action-btn" >SignUp</a></li>
+       <% }%>
+        </div>
+    </header>
