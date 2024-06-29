@@ -16,6 +16,7 @@ A web application that extracts and summarizes transcripts from YouTube videos u
 - **User Interface**: Provides a user-friendly interface for inputting YouTube URLs and displaying summaries.
 - **Error Handling and Validation**: Ensures robust error handling and user feedback.
 
+
 ## Tech Stack
 
 - **Front-End**: Html,css, EJS
